@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home-screen">
     <app-header></app-header>
     <home-banner></home-banner>
     <home-quick-links></home-quick-links>
@@ -40,6 +40,9 @@ export default {
 /* fonts */
 
 /* mobile styles */
+.home-screen {
+  background-color: white;
+}
 .bottom-bar-space {
   width: 100%;
   height: 64px;

@@ -5,6 +5,7 @@ import Home from "./screens/Home.vue";
 import Cart from "./screens/Cart.vue";
 
 Vue.use(VueRouter);
+Vue.config.devtools = true;
 
 const routes = [
   {

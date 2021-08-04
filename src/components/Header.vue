@@ -1,24 +1,24 @@
 <template>
   <header class="header">
     <div class="header__top">
-      <a class="header__free-ship" href="">
+      <span class="header__free-ship">
         <img
           src="https://salt.tikicdn.com/ts/upload/e5/1d/22/61ff572362f08ead7f34ce410a4a6f96.png"
           alt="free ship"
         />
-      </a>
-      <a class="header__brand" href="">
+      </span>
+      <router-link class="header__brand" to="/">
         <img
           src="https://salt.tikicdn.com/ts/upload/d4/ca/89/28d85ed27396c1beebad8a3fec18bfe4.png"
           alt="brand"
         />
-      </a>
-      <a class="header__cart" href="">
+      </router-link>
+      <router-link class="header__cart" to="/cart">
         <img
           src="https://salt.tikicdn.com/ts/upload/70/44/6c/a5ac520d156fde81c08dda9c89afaf37.png"
           alt="cart"
         />
-      </a>
+      </router-link>
     </div>
     <div class="header__search-bar">
       <img
