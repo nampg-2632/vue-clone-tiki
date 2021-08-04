@@ -14,11 +14,19 @@
         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
       </svg>
     </router-link>
-    <span class="cart-header__title">
-      Giỏ hàng (2)
-    </span>
+    <span class="cart-header__title"> Giỏ hàng ({{ itemsCount }}) </span>
   </header>
 </template>
+
+<script>
+import store from "../store/store";
+
+export default {
+  computed: {
+    itemsCount: () => store.getters.itemsCount,
+  },
+};
+</script>
 
 <style scoped>
 .cart-header {

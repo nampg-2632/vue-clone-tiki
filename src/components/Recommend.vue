@@ -3,42 +3,19 @@
     <div class="recommend__heading">
       <h4>Gợi ý hôm nay</h4>
     </div>
-    <div class="recommend__items">
-      <a href="" class="recommend__item" :key="index" v-for="index in 5">
-        <div class="recommend__image">
-          <img
-            class="recommend__item-image"
-            :src="products[0].imgUrl"
-            alt="products[0].name"
-          />
-          <img
-            class="recommend__promotion"
-            src="https://salt.tikicdn.com/ts/upload/dc/0d/49/ef9dc5d8164bd62b011e54276502b342.png"
-            alt=""
-          />
-        </div>
-        <p>{{ products[0].name }}</p>
-        <item-stars :point="4"></item-stars>
-        <p class="recommend__item-price">
-          <span>{{ products[0].price }}</span
-          ><span> đ</span>
-          <span class="recommend__item-discount"
-            >-{{ products[0].discount.value
-            }}{{ products[0].discount.unit }}</span
-          >
-        </p>
-      </a>
-    </div>
+    <product-card-list :products="products"></product-card-list>
   </div>
 </template>
 
 <script>
-import ItemStars from "./ItemStars.vue";
+import ProductCardList from "./ProductCardList.vue";
+
 export default {
   data() {
     return {
       products: [
         {
+          _id: "T001",
           name: "Đèn pin mini siêu sáng",
           sold: 100,
           price: 86000,
@@ -50,12 +27,37 @@ export default {
           imgUrl:
             "https://salt.tikicdn.com/cache/w200/ts/product/cb/12/d5/af8325d164146466046581d008b7b781.jpg",
         },
-        {},
+        {
+          _id: "T002",
+          name: "Súp lơ xanh",
+          sold: 120,
+          price: 53000,
+          discount: {
+            value: 26,
+            unit: "%",
+          },
+          star: 5,
+          imgUrl:
+            "https://salt.tikicdn.com/cache/200x200/ts/product/72/73/df/32874df2e97e42dc30d219150601262e.png",
+        },
+        {
+          _id: "T003",
+          name: "Xiaomi Miband 6 quốc tế",
+          sold: 200,
+          price: 1090000,
+          discount: {
+            value: 16,
+            unit: "%",
+          },
+          star: 4,
+          imgUrl:
+            "https://salt.tikicdn.com/cache/200x200/ts/product/8d/ae/26/e221b7c4e41f99182eb47761124ec6f3.jpg",
+        },
       ],
     };
   },
   components: {
-    "item-stars": ItemStars,
+    "product-card-list": ProductCardList,
   },
 };
 </script>
@@ -64,45 +66,8 @@ export default {
 .recommend {
   padding: 10px 0;
 }
-.recommend__item .recommend__item-image {
-  width: 100%;
-}
+
 .recommend__heading {
   padding: 0 15px 12px 15px;
-}
-.recommend__items {
-  padding: 0 5px;
-  display: grid;
-  row-gap: 20px;
-  grid-template-columns: 1fr 1fr;
-}
-.recommend__item {
-  padding: 0 2px;
-}
-.recommend__image {
-  position: relative;
-}
-.recommend__promotion {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  height: 24px;
-  object-fit: contain;
-}
-.recommend__item-sold {
-  font-size: 0.8em;
-  margin-left: 2px;
-  padding-left: 5px;
-  border-left: 1px solid grey;
-}
-.recommend__item-price {
-  font-weight: bold;
-}
-.recommend__item-discount {
-  padding: 2px 5px;
-  color: white;
-  margin-left: 5px;
-  font-size: 0.8em;
-  background-color: #ff424e;
 }
 </style>

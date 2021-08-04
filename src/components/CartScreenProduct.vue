@@ -1,6 +1,5 @@
 <template>
   <div class="cart-product">
-    <input class="cart-product__check" type="checkbox" name="" id="" />
     <img class="cart-product__img" :src="product.imgUrl" alt="" />
     <div class="cart-product__info">
       <p class="cart-product__name">
@@ -13,8 +12,10 @@
         <span>{{ product.name }}</span>
       </p>
       <p class="cart-product__price">
-        <span class="cart-product__price-real">{{ product.price }} đ</span>
-        <span class="cart-product__price-fake">{{ product.fakePrice }} đ</span>
+        <span class="cart-product__price-real">{{ toVND(product.price) }}</span>
+        <span class="cart-product__price-fake"
+          >{{ toVND(product.fakePrice) }} đ</span
+        >
       </p>
       <div class="cart-product__change-quantity">
         <button
@@ -37,15 +38,45 @@
 </template>
 
 <script>
+import store from "../store/store";
+
+import { toVND } from "../helper";
+
 export default {
   props: ["product"],
-  data() {
-    return {};
-  },
   methods: {
-    increseQuantity() {},
-    decreseQuantity() {},
-    remove() {},
+    toVND,
+    increseQuantity() {
+      const newQuantity = this.product.quantity + 1;
+      store.commit("setItemQuantity", {
+        itemId: this.product._id,
+        quantity: newQuantity,
+      });
+    },
+    decreseQuantity() {
+      const itemId = this.product._id;
+      const newQuantity = this.product.quantity - 1;
+      if (newQuantity > 0) {
+        store.commit("setItemQuantity", {
+          itemId,
+          quantity: newQuantity,
+        });
+      } else {
+        const confirm = window.confirm(
+          "Bạn muốn xóa sản phẩm ra khỏi giỏ hàng?"
+        );
+        if (confirm) {
+          store.commit("removeFromCart", itemId);
+        }
+      }
+    },
+    remove() {
+      const itemId = this.product._id;
+      const confirm = window.confirm("Bạn muốn xóa sản phẩm ra khỏi giỏ hàng?");
+      if (confirm) {
+        store.commit("removeFromCart", itemId);
+      }
+    },
   },
 };
 </script>
@@ -55,8 +86,7 @@ export default {
   background-color: white;
   margin: 5px 0;
   display: grid;
-  grid-template-columns: 1fr 3fr 9fr;
-  justify-items: center;
+  grid-template-columns: 4fr 8fr;
   padding: 10px 10px;
   gap: 5px;
 }

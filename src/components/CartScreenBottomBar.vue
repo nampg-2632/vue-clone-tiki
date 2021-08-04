@@ -2,11 +2,44 @@
   <div class="cart-bottom-bar">
     <div class="cart-total">
       <p class="cart-total__title">Tổng cộng</p>
-      <p class="cart-total__value">10.000.000 đ</p>
+      <p class="cart-total__value">{{ toVND(totalPrice) }}</p>
     </div>
-    <button class="cart-checkout">Thanh toán</button>
+    <button v-on:click="checkout" class="cart-checkout">Thanh toán</button>
   </div>
 </template>
+
+<script>
+import store from "../store/store";
+
+import { toVND } from "../helper";
+
+export default {
+  methods: {
+    toVND,
+    checkout() {
+      if (this.items.length) {
+        store.commit("createOrder", {
+          items: this.items,
+          customer: {
+            lastName: "Nam",
+            firstName: "Giang",
+          },
+        });
+      } else {
+        window.alert("Giỏ hàng của bạn đang trống.");
+      }
+    },
+  },
+  computed: {
+    totalPrice() {
+      return store.getters.totalPrice;
+    },
+    items() {
+      return store.state.cart.items;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .cart-bottom-bar {
