@@ -13,9 +13,9 @@
       </p>
       <p class="cart-product__price">
         <span class="cart-product__price-real">{{ toVND(product.price) }}</span>
-        <span class="cart-product__price-fake"
-          >{{ toVND(product.fakePrice) }} đ</span
-        >
+        <span class="cart-product__price-fake">{{
+          toVND(product.fakePrice)
+        }}</span>
       </p>
       <div class="cart-product__change-quantity">
         <button
