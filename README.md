@@ -3,6 +3,7 @@
 ## Project setup
 ```
 yarn install
+Copy file .env.default to .env
 ```
 
 ### Compiles and hot-reloads for development
