@@ -17,3 +17,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.item-star {
+  margin-bottom: 2px;
+}
+</style>

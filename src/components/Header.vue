@@ -18,6 +18,9 @@
           src="https://salt.tikicdn.com/ts/upload/70/44/6c/a5ac520d156fde81c08dda9c89afaf37.png"
           alt="cart"
         />
+        <span class="header__cart-badge">
+          {{ itemsCount }}
+        </span>
       </router-link>
     </div>
     <div class="header__search-bar">
@@ -31,9 +34,11 @@
 </template>
 
 <script>
+import store from "../store/store";
+
 export default {
-  data() {
-    return {};
+  computed: {
+    itemsCount: () => store.getters.itemsCount,
   },
 };
 </script>
@@ -67,6 +72,21 @@ export default {
 }
 .header__cart {
   height: 24px;
+  position: relative;
+}
+.header__cart-badge {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background-color: #1ba8ff;
+  color: white;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.8em;
+  border-radius: 999px;
 }
 .header__search-bar {
   height: 36px;
