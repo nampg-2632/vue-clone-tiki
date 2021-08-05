@@ -25,6 +25,7 @@ export default {
             firstName: "Giang",
           },
         });
+        window.alert("Đặt hàng thành công");
       } else {
         window.alert("Giỏ hàng của bạn đang trống.");
       }
