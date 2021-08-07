@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$store.commit("addToCart", this.product);
+      this.$store.dispatch("addToCart", this.product);
     },
     toVND,
   },

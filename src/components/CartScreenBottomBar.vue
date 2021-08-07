@@ -16,7 +16,7 @@ export default {
     toVND,
     checkout() {
       if (this.items.length) {
-        this.$store.commit("createOrder", {
+        this.$store.dispatch("createOrder", {
           items: this.items,
           customer: {
             lastName: "Nam",
