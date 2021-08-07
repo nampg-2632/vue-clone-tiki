@@ -10,7 +10,6 @@
 
 <script>
 import store from "../store/store";
-
 import CartScreenProduct from "./CartScreenProduct.vue";
 
 export default {

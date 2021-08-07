@@ -2,7 +2,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import store from "./store/store";
-
 import Home from "./screens/Home.vue";
 import Cart from "./screens/Cart.vue";
 
