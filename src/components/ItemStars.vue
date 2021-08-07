@@ -10,7 +10,7 @@ import Star from "./Star.vue";
 export default {
   props: ["point"],
   components: {
-    star: Star,
+    Star,
   },
 };
 </script>

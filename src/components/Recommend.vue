@@ -20,7 +20,7 @@ export default {
     };
   },
   components: {
-    "product-card-list": ProductCardList,
+    ProductCardList,
   },
   async mounted() {
     try {

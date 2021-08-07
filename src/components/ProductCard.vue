@@ -33,7 +33,7 @@ import ItemStars from "./ItemStars.vue";
 export default {
   props: ["product"],
   components: {
-    "item-stars": ItemStars,
+    ItemStars,
   },
   methods: {
     addToCart() {
