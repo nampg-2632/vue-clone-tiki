@@ -38,7 +38,6 @@
 </template>
 
 <script>
-import store from "../store/store";
 import { toVND } from "../helper";
 
 export default {
@@ -47,7 +46,7 @@ export default {
     toVND,
     increseQuantity() {
       const newQuantity = this.product.quantity + 1;
-      store.commit("setItemQuantity", {
+      this.$store.commit("setItemQuantity", {
         itemId: this.product._id,
         quantity: newQuantity,
       });
@@ -56,7 +55,7 @@ export default {
       const itemId = this.product._id;
       const newQuantity = this.product.quantity - 1;
       if (newQuantity > 0) {
-        store.commit("setItemQuantity", {
+        this.$store.commit("setItemQuantity", {
           itemId,
           quantity: newQuantity,
         });
@@ -65,7 +64,7 @@ export default {
           "Bạn muốn xóa sản phẩm ra khỏi giỏ hàng?"
         );
         if (confirm) {
-          store.commit("removeFromCart", itemId);
+          this.$store.commit("removeFromCart", itemId);
         }
       }
     },
@@ -73,7 +72,7 @@ export default {
       const itemId = this.product._id;
       const confirm = window.confirm("Bạn muốn xóa sản phẩm ra khỏi giỏ hàng?");
       if (confirm) {
-        store.commit("removeFromCart", itemId);
+        this.$store.commit("removeFromCart", itemId);
       }
     },
   },

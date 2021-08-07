@@ -34,11 +34,11 @@
 </template>
 
 <script>
-import store from "../store/store";
-
 export default {
   computed: {
-    itemsCount: () => store.getters.itemsCount,
+    itemsCount() {
+      return this.$store.getters.itemsCount;
+    },
   },
 };
 </script>

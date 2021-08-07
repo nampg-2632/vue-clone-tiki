@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import store from "../store/store";
 import { toVND } from "../helper";
 
 export default {
@@ -17,7 +16,7 @@ export default {
     toVND,
     checkout() {
       if (this.items.length) {
-        store.commit("createOrder", {
+        this.$store.commit("createOrder", {
           items: this.items,
           customer: {
             lastName: "Nam",
@@ -32,10 +31,10 @@ export default {
   },
   computed: {
     totalPrice() {
-      return store.getters.totalPrice;
+      return this.$store.getters.totalPrice;
     },
     items() {
-      return store.state.cart.items;
+      return this.$store.state.cart.items;
     },
   },
 };

@@ -28,7 +28,6 @@
 
 <script>
 import { toVND } from "../helper";
-import store from "../store/store";
 import ItemStars from "./ItemStars.vue";
 
 export default {
@@ -38,7 +37,7 @@ export default {
   },
   methods: {
     addToCart() {
-      store.commit("addToCart", this.product);
+      this.$store.commit("addToCart", this.product);
     },
     toVND,
   },
