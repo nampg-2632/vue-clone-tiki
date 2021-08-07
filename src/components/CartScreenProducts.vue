@@ -13,9 +13,6 @@ import store from "../store/store";
 import CartScreenProduct from "./CartScreenProduct.vue";
 
 export default {
-  data() {
-    return {};
-  },
   computed: {
     cartItems: () => store.state.cart.items,
   },

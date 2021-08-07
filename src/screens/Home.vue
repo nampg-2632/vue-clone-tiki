@@ -20,9 +20,6 @@ import BottomBar from "../components/BottomBar.vue";
 import QuickLinks from "../components/QuickLinks.vue";
 
 export default {
-  data() {
-    return {};
-  },
   components: {
     "app-header": Header,
     "home-banner": BannerSlider,

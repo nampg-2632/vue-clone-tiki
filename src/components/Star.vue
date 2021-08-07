@@ -20,9 +20,6 @@
 <script>
 export default {
   props: ["light"],
-  data() {
-    return {};
-  },
 };
 </script>
 

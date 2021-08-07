@@ -11,9 +11,6 @@
 <script>
 import ProductCard from "./ProductCard.vue";
 export default {
-  data() {
-    return {};
-  },
   props: ["products"],
   components: {
     "product-card": ProductCard,
