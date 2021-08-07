@@ -53,6 +53,20 @@ const store = new Vuex.Store({
       state.cart.items = [];
     },
   },
+  actions: {
+    addToCart({ commit }, item) {
+      commit("addToCart", item);
+    },
+    removeFromCart({ commit }, itemId) {
+      commit("removeFromCart", itemId);
+    },
+    setItemQuantity({ commit }, payload) {
+      commit("setItemQuantity", payload);
+    },
+    createOrder({ commit }, payload) {
+      commit("createOrder", payload);
+    },
+  },
   getters: {
     itemsCount: (state) =>
       state.cart.items.reduce((count, item) => count + item.quantity, 0),

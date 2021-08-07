@@ -9,19 +9,16 @@
 </template>
 
 <script>
-import store from "../store/store";
-
 import CartScreenProduct from "./CartScreenProduct.vue";
 
 export default {
-  data() {
-    return {};
-  },
   computed: {
-    cartItems: () => store.state.cart.items,
+    cartItems() {
+      return this.$store.state.cart.items;
+    },
   },
   components: {
-    "cart-screen-product": CartScreenProduct,
+    CartScreenProduct,
   },
 };
 </script>

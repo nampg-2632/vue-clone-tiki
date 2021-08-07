@@ -7,14 +7,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {};
-  },
-};
-</script>
-
 <style scoped>
 /* mobile styles */
 .banner-slider {

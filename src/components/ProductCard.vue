@@ -28,18 +28,16 @@
 
 <script>
 import { toVND } from "../helper";
-
-import store from "../store/store";
 import ItemStars from "./ItemStars.vue";
 
 export default {
   props: ["product"],
   components: {
-    "item-stars": ItemStars,
+    ItemStars,
   },
   methods: {
     addToCart() {
-      store.commit("addToCart", this.product);
+      this.$store.dispatch("addToCart", this.product);
     },
     toVND,
   },

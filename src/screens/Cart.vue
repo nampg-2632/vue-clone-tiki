@@ -13,13 +13,10 @@ import CartScreenHeader from "../components/CartScreenHeader.vue";
 import CartScreenBottomBar from "../components/CartScreenBottomBar.vue";
 import CartScreenProducts from "../components/CartScreenProducts.vue";
 export default {
-  data() {
-    return {};
-  },
   components: {
-    "cart-screen-header": CartScreenHeader,
-    "cart-screen-bottom-bar": CartScreenBottomBar,
-    "cart-screen-products": CartScreenProducts,
+    CartScreenHeader,
+    CartScreenBottomBar,
+    CartScreenProducts,
   },
 };
 </script>
