@@ -9,7 +9,7 @@
 
 <script>
 import axios from "axios";
-import ProductCardList from "./ProductCardList.vue";
+import ProductCardList from "@/components/ProductCardList";
 
 const VUE_APP_API_ENDPOINT = process.env.VUE_APP_API_ENDPOINT;
 
