@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { toVND } from "../helper";
+import { toVND } from "@/helpers/helper";
 import ItemStars from "./ItemStars.vue";
 
 export default {

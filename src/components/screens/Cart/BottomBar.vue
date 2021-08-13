@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { toVND } from "../helper";
+import { toVND } from "@/helpers/helper";
 
 export default {
   methods: {

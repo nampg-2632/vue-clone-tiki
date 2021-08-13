@@ -1,22 +1,23 @@
 <template>
   <div class="cart-screen">
-    <cart-screen-header></cart-screen-header>
-    <cart-screen-products></cart-screen-products>
-    <cart-screen-bottom-bar></cart-screen-bottom-bar>
+    <cart-header></cart-header>
+    <cart-items-list></cart-items-list>
+    <cart-bottom-bar></cart-bottom-bar>
 
     <div class="cart-products"></div>
   </div>
 </template>
 
 <script>
-import CartScreenHeader from "../components/CartScreenHeader.vue";
-import CartScreenBottomBar from "../components/CartScreenBottomBar.vue";
-import CartScreenProducts from "../components/CartScreenProducts.vue";
+import Header from "../components/screens/Cart/Header.vue";
+import BottomBar from "../components/screens/Cart/BottomBar.vue";
+import ItemsList from "../components/screens/Cart/ItemsList.vue";
+
 export default {
   components: {
-    CartScreenHeader,
-    CartScreenBottomBar,
-    CartScreenProducts,
+    "cart-header": Header,
+    "cart-bottom-bar": BottomBar,
+    "cart-items-list": ItemsList,
   },
 };
 </script>

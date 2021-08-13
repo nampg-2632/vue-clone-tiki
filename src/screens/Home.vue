@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import BannerSlider from "../components/BannerSlider.vue";
-import Categories from "../components/Categories.vue";
-import Recommend from "../components/Recommend.vue";
-import BottomBar from "../components/BottomBar.vue";
-import QuickLinks from "../components/QuickLinks.vue";
+import Header from "../components/screens/Home/Header.vue";
+import BannerSlider from "../components/screens/Home/BannerSlider.vue";
+import Categories from "../components/screens/Home/Categories.vue";
+import Recommend from "../components/screens/Home/Recommend.vue";
+import BottomBar from "../components/screens/Home/BottomBar.vue";
+import QuickLinks from "../components/screens/Home/QuickLinks.vue";
 
 export default {
   components: {

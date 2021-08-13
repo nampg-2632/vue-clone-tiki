@@ -1,15 +1,15 @@
 <template>
   <div class="cart-products">
-    <cart-screen-product
+    <item
       :key="index"
       v-for="(item, index) in cartItems"
       :product="item"
-    ></cart-screen-product>
+    ></item>
   </div>
 </template>
 
 <script>
-import CartScreenProduct from "./CartScreenProduct.vue";
+import Item from "./Item.vue";
 
 export default {
   computed: {
@@ -18,7 +18,7 @@ export default {
     },
   },
   components: {
-    CartScreenProduct,
+    Item,
   },
 };
 </script>
